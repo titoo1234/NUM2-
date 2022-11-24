@@ -11,6 +11,11 @@ b1 = bezier(B1,t);
 b2 = bezier(B2,t);
 b3 = bezier(B3,t);
 
+
+plot(b1(:,1),b1(:,2),'r');
+
+
+
 % radialne napake
 [e1,e2,e3] = deal(0);
 for i = 1:length(t)
@@ -33,15 +38,15 @@ plot(b1(:,1),b1(:,2),'r');
 plot(b2(:,1),b2(:,2),'g');
 plot(b3(:,1),b3(:,2),'b');
 for i = 1:n-1
-B1 = (R*B1')';
-B2 = (R*B2')';
-B3 = (R*B3')';
-b1 = bezier(B1,t);
-b2 = bezier(B2,t);
-b3 = bezier(B3,t);
-plot(b1(:,1),b1(:,2),'r');
-plot(b2(:,1),b2(:,2),'g');
-plot(b3(:,1),b3(:,2),'b');
+    B1 = (R*B1')';
+    B2 = (R*B2')';
+    B3 = (R*B3')';
+    b1 = bezier(B1,t);
+    b2 = bezier(B2,t);
+    b3 = bezier(B3,t);
+    plot(b1(:,1),b1(:,2),'r');
+    plot(b2(:,1),b2(:,2),'g');
+    plot(b3(:,1),b3(:,2),'b');
 end
 hold off
 axis equal

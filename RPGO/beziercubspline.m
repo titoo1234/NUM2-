@@ -34,7 +34,6 @@ B{1} = b
 
 m
 for i = 3 : (m-1)
-    delDif
 b = zeros(4,v);
 b(2,:) = (delDif(i-1,:) + delDif(i,:))/(delDif(i-2,:)+delDif(i-1,:)+delDif(i,:)) * D(i,:) + delDif(i-2,:)/(delDif(i-2,:)+delDif(i-1,:)+delDif(i,:)) * D(i+1,:);
 b(3,:) = delDif(i,:)/(delDif(i-2,:)+delDif(i-1,:)+delDif(i,:)) * D(i,:) + (delDif(i-1,:) + delDif(i-2,:))/(delDif(i-2,:)+delDif(i-1,:)+delDif(i,:)) * D(i+1,:);

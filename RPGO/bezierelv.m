@@ -18,7 +18,6 @@ function Be = bezierelv(B,k)
 % krvulje stopnje n+k, ki ustreza dani Bezierjevi krivulji
 Be = B;
 for i = 1:k
-Be = bezierelv1(Be);
-
+    Be = bezierelv1(Be);
 end
 end

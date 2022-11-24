@@ -1,15 +1,27 @@
-p = [4 7 2 8 9 1 4];
-b = power2bernstein(p)
-bernstein2power(b)
+% Kviz 1
+% 1.)
+a = 21/101;
+b0 = [2, a];
+b2 = [8, 1+a];
+b1 = [11/2,a-1];
+B = [b0;b1;b2];
+t1 = 0:0.01:1;
+% plotbezier(B, t1); hold on;
+% plot(-t1.^2+7*t1+2,3*t1.^2-2*t1+a, 'b');
 
+% sum(b1.^2)^(1/2);
+R = [cosd(60) -sind(60); sind(60) cosd(60)];
+% (sum(R*bezier(B,1/2)-b0').^2)^(1/2)
+BR = R*B';
+bernstein2power(BR(2,:));
 
-n = 5;
-x = linspace(0,1);
-clf
-hold on
-for i = 0:n
-b = zeros(1,n+1);
-b(i+1) = 1;
-plot(x,polyval(flip(bernstein2power(b)),x));
-end
-hold off
+% 2.)
+b = 4+23/101;
+B = [-1 0 1; 5 0 -2; 3 6 b; 3 3 -5];
+% sum(bezierder(B,1,1/4).^2)^(1/2);
+% sum(bezierder(B,1,1).^2)^(1/2);
+
+t = 1/4;
+% bb = cross(bezierder(B,1,t),bezierder(B,2,t));
+% bb'*bezierder(B,3,t)/sum(bb.^2)^(1/2)
+

@@ -1,0 +1,109 @@
+NALOGA1
+% prevedba v Bernsteinovo bazo
+% p = [4 7 2 8 9 1 4];
+% 4 x^6 + 7x...
+function b = power2bernstein(p)
+% prevedba nazaj v potenčno bazo
+p = bernstein2power(b)
+	plot(x,polyval(bernstein2power(b),x));
+
+NALOGA2
+De Casteljaujev postopek.
+DELA SAMMO ZA ENO DIMENZIJO
+function D = decasteljau(b,t)
+	b...kontrolne točke !!!x,y POSEBI!!!
+	t...parameter, kjer se izračuna
+	D...tabela n+1 x n+1
+	
+	% kontrolne točke Bezierjeve krivulje
+	B = [0 0; 1 2; 3 3; 4 -1; 0 2];
+	
+	decasteljau(B(:,1),0)
+
+bezier
+DELA ZA VEČ DIMENZIJ
+function b = bezier(B,t)
+	B.. kontrolne točke
+	t...seznam parametrov
+
+	B = [0 0; 1 2; 3 3; 4 -1; 0 2];
+	t = linspace(0,1,11);
+	bezier(B,t)
+
+
+NALOGA3
+Odvodi:
+DELUJE V DVEH DIMENZIJAH
+function [tockePRIparametru,kontrolneOdvoda] = bezierder(B,r,t)
+	% bezierder vrne točke na krivulji, ki predstavlja odvod dane
+	% Bezierjeve krivulje
+
+	% B matrika kontrolnih točk Bezierjeve krivulje
+	% r stopnja odvoda, ki ga računamo,
+	% t seznam parameterov, pri katerih računamo odvod
+
+	B = [-2/3 -4/5; 1/3 1/5; 0 0; -1/3 1/5; 2/3 -4/5];
+	t = linspace(0,1,9);
+	d1b = bezierder(B,1,t)
+
+SAMO ZA KONTROLNE TOČKE DELUJE V VSEH DIMENZIJAH
+db1 = KontrolneOdvod(B,r);
+
+	t = (0.46:0.01:0.54)';
+	d1b = bezierder(B,1,t);
+	tab = table();
+	tab{:,'t'} = t;
+	tab{:,'x'} = d1b(:,1);
+	tab{:,'y'} = d1b(:,2);
+
+NALOGA4
+function B = bezierarc(fi,m)
+	% bezierarc izračuna kontrole točke Bezierjeve krivulje, ki
+	% predstavlja interpolacijo krožnega loka po izbrani metodi
+	% fi kot, ki določa krozni lok v območju (-fi,fi),
+
+NALOGA5
+function BS = beziersub1(B,t,k)
+	beziersub izvede subdivizijo Bezierjeve krivulje
+	dobimo drevesno rešitev v obliki celice,
+
+	% BS = beziersub1(B,subt,k);
+        % BS = Cell2Array(BS)
+	
+	DOBIMO KONTROLNE TOČKE VSAKEGA DELA POSEBI
+	PRVA IN ZADNJA TOČKA STA ISTI OD "STARŠA" OSTALE PA NE
+	VSAK DEL IMA ENAKO ŠTEVILO TOČK KOT STARŠ
+
+NALOGA6
+Višanje stopnje
+function Be = bezierelv(B,k)
+	% dobimo kontrolne točke ENO VEČ 
+	% prva in zadnja sta enaki kot na začetku
+	% kontrolne točke opisujejo ISTO KRIVULJO KOT PREJ
+
+
+NALOGA7
+Parametrizacija sestavljene krivulje
+
+
+NALOGA8
+Parametrizacija sestavljene krivulje
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
